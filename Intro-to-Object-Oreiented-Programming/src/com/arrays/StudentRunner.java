@@ -14,12 +14,18 @@ public class StudentRunner {
 		int maxMark = student.getMaximumMark();
 		int minMark = student.getMinimumMark();
 		BigDecimal average = student.getAverage();
+		System.out.println(student);
 
 		System.out.println("number of marks " + number);
 		System.out.println("Sum is " + sum);
 		System.out.println("Maximum mark is " + maxMark);
 		System.out.println("Minimum mark is " + minMark);
 		System.out.println("Average  is " + average);
+		
+		student.addNewMark(50);
+		System.out.println(student);
+		student.removeMarkAtIndex(1);
+		System.out.println(student);
 
 	}
 
