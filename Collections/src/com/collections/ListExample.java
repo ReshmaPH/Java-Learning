@@ -18,6 +18,10 @@ public class ListExample {
 		System.out.println(words);
 		Collections.sort(words); // sort has no affect since it is string list
 		
+		System.out.println("Printing words using forEach");
+		
+		words.forEach(word ->System.out.println(word));
+		words.forEach(System.out::println); // result will be same
 		
 		List<Integer> numbers=new ArrayList<>();
 		numbers.add(1);

@@ -1,5 +1,7 @@
+
 package com.collections;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
@@ -22,31 +24,40 @@ import java.util.Scanner;
 public class FrescoQuestion {
 
 	public static void main(String[] args) {
-		Scanner scanner = new Scanner(System.in);
-		//System.out.println("Enter no of key value pairs");
-		int count = scanner.nextInt();
-		//System.out.println("Enter key value pairs");
-
-		Map<Integer, String> map = new HashMap<>();
-
-		for (int i = 0; i < count; i++) {
-
-			map.put(scanner.nextInt(), scanner.next());
-		}
-	//	System.out.println("Enter key to be searched");
-		int key = scanner.nextInt();
-
-		/*System.out.println("number-" + count + "pair" + map + "key" + key);
+		Scanner scanner=new Scanner(System.in);
+		int number=scanner.nextInt();
 		
-		for(Map.Entry m:map.entrySet()) {
-			System.out.println(" "+m.getKey() +" "+ m.getValue());
-		}*/
+		int length=String.valueOf(number).length(); // convert to string first and find length of string
+
+		int [] digitsArray=new int [length];
+		int i=length-1;
 		
-		if(map.containsKey(key)) {
-			System.out.println(map.get(key));
-		}else {
-			System.out.println(-1);
+		while(number>0) {
+			digitsArray[i]=number%10;
+			number /=10;
+			i--;
 		}
+		
+		boolean[] visited=new boolean[length];
+		Arrays.fill(visited, false);
+		
+		for(int j=0;j<length;j++) {
+			if(visited[j]==true) {
+				continue;
+			}
+			
+			int count=1;
+			for(int k=j+1;k<length;k++) {
+				if(digitsArray[j]==digitsArray[k]) {
+					count++;
+					visited[k]=true;
+				}
+			}
+			System.out.println(digitsArray[j]+" :"+count);
+		}
+		
+		
+
 		
 
 	}
