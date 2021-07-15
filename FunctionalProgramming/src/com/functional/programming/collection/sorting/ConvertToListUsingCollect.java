@@ -1,4 +1,4 @@
-package com.functional.programming;
+package com.functional.programming.collection.sorting;
 
 import java.util.ArrayList;
 import java.util.List;

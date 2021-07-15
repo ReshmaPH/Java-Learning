@@ -1,4 +1,4 @@
-package com.collections;
+package com.functional.interfaces;
 import java.util.*;
 
 public class IteratorExample {
